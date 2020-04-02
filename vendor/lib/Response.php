@@ -6,6 +6,7 @@ class Response{
     private static $data = [];
     public static function setResponse($code = null,$data = null){
         header('Content-Type: application/json');
+        header("Access-Control-Allow-Origin: *");
         if($code == 404){
             $data = ['success'=>false,"data"=>$data];
             self::setData($data);
